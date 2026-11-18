@@ -21,6 +21,11 @@ builder.Host.UseSerilog((ctx, services, cfg) => cfg
 builder.Services.AddControllers(o => o.Filters.Add<ValidationFilter>())
     .AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter()));
 builder.Services.Configure<ApiBehaviorOptions>(o => o.SuppressModelStateInvalidFilter = true);
+builder.Services.PostConfigure<Platera.Infrastructure.Storage.StorageOptions>(o =>
+{
+    if (string.IsNullOrWhiteSpace(builder.Configuration["Storage:UploadsPath"]))
+        o.UploadsPath = Path.Combine(builder.Environment.WebRootPath ?? Path.Combine(builder.Environment.ContentRootPath, "wwwroot"), "uploads");
+});
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddPlateraAuth(builder.Configuration);

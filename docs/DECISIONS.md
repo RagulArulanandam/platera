@@ -12,3 +12,6 @@
 - D11: Rate limiting: built-in fixed-window limiter wrapped in AddPlateraRateLimiting (per IP+path), policies "auth" and "feedback", limits configurable.
 - D12: Validation via FluentValidation executed by a global action filter; exceptions mapped to ProblemDetails by ExceptionHandlingMiddleware. Manual DTO mapping (no AutoMapper).
 - D13: Integration tests use WebApplicationFactory + EF InMemory provider.
+- D14: Recipe list/search/filter/sort and featured/trending are implemented in RecipeService (M4) so the browse UI can be built against them; likes/ratings/comments endpoints follow in M5. Trending = likes + visible comments in the last 7 days.
+- D15: Image uploads validated by magic bytes (JPEG/PNG/GIF/WebP), max 5 MB, stored via IImageStorage (LocalImageStorage under wwwroot/uploads, gitignored). Recipe image URLs must be /uploads/* or /seed/*. Images deleted from disk when removed from a recipe or the recipe is deleted.
+- D16: Admins may edit/delete any recipe ("full privileges"); regular users only their own.

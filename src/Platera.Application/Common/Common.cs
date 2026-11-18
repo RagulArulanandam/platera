@@ -15,10 +15,12 @@ public record PagedResult<T>(IReadOnlyList<T> Items, int Page, int PageSize, int
     public int TotalPages => PageSize == 0 ? 0 : (int)Math.Ceiling(TotalCount / (double)PageSize);
 }
 
-public record PageQuery(int Page = 1, int PageSize = 12)
+public class PageQuery
 {
+    public int Page { get; set; } = 1;
+    public int PageSize { get; set; } = 12;
     public int SafePage => Page < 1 ? 1 : Page;
-    public int SafePageSize => PageSize is < 1 ? 12 : Math.Min(PageSize, 50);
+    public int SafePageSize => PageSize < 1 ? 12 : Math.Min(PageSize, 50);
 }
 
 public interface ICurrentUser

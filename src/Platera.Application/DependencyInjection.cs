@@ -1,6 +1,9 @@
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Platera.Application.Auth;
+using Platera.Application.Images;
+using Platera.Application.Lookups;
+using Platera.Application.Recipes;
 
 namespace Platera.Application;
 
@@ -10,6 +13,9 @@ public static class DependencyInjection
     {
         services.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>();
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IRecipeService, RecipeService>();
+        services.AddScoped<ILookupService, LookupService>();
+        services.AddScoped<IImageUploadService, ImageUploadService>();
         return services;
     }
 }

@@ -26,6 +26,7 @@ public class PlateraFactory : WebApplicationFactory<Program>
             ["RateLimiting:AuthPermitLimit"] = "1000",
             ["RateLimiting:FeedbackPermitLimit"] = "1000",
             ["Seed:AdminEmail"] = AdminEmail,
+            ["Storage:UploadsPath"] = Path.Combine(Path.GetTempPath(), "platera-tests-uploads"),
             ["Seed:AdminPassword"] = AdminPassword,
         }));
         builder.ConfigureServices(services =>

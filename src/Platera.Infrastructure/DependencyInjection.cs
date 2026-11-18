@@ -26,6 +26,9 @@ public static class DependencyInjection
         services.Configure<Platera.Infrastructure.Auth.JwtOptions>(config.GetSection(Platera.Infrastructure.Auth.JwtOptions.Section));
         services.AddSingleton<Platera.Application.Auth.ITokenService, Platera.Infrastructure.Auth.TokenService>();
 
+        services.Configure<Platera.Infrastructure.Storage.StorageOptions>(config.GetSection(Platera.Infrastructure.Storage.StorageOptions.Section));
+        services.AddSingleton<Platera.Application.Images.IImageStorage, Platera.Infrastructure.Storage.LocalImageStorage>();
+
         return services;
     }
 }

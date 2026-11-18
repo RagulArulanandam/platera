@@ -8,6 +8,7 @@ public static class Roles
     public const string User = "User";
 }
 
+[System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
 public enum Difficulty { Easy = 1, Medium = 2, Hard = 3 }
 
 public class AppUser : IdentityUser<Guid>
