@@ -16,6 +16,8 @@ public static class DependencyInjection
         services.AddScoped<IRecipeService, RecipeService>();
         services.AddScoped<ILookupService, LookupService>();
         services.AddScoped<IImageUploadService, ImageUploadService>();
+        services.AddScoped<Platera.Application.Interactions.IInteractionService, Platera.Application.Interactions.InteractionService>();
+        services.AddScoped<Platera.Application.Admin.IAdminService, Platera.Application.Admin.AdminService>();
         return services;
     }
 }
