@@ -23,6 +23,9 @@ public static class DependencyInjection
             .AddRoles<AppRole>()
             .AddEntityFrameworkStores<PlateraDbContext>();
 
+        services.Configure<Platera.Infrastructure.Auth.JwtOptions>(config.GetSection(Platera.Infrastructure.Auth.JwtOptions.Section));
+        services.AddSingleton<Platera.Application.Auth.ITokenService, Platera.Infrastructure.Auth.TokenService>();
+
         return services;
     }
 }
