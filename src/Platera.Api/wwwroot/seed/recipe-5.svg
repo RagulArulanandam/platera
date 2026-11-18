@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img">
+  <rect width="800" height="600" fill="#eaf0d2"/>
+  <circle cx="400" cy="310" r="230" fill="#fffaf1"/>
+  <circle cx="400" cy="310" r="200" fill="none" stroke="#6b7d3a" stroke-width="6" opacity="0.5"/>
+  <circle cx="400" cy="310" r="150" fill="#6b7d3a" opacity="0.88"/>
+  <circle cx="385" cy="265" r="15" fill="#6b7d3a" opacity="0.3"/><circle cx="482" cy="326" r="22" fill="#6b7d3a" opacity="0.4"/><circle cx="579" cy="387" r="29" fill="#6b7d3a" opacity="0.5"/><circle cx="676" cy="448" r="14" fill="#6b7d3a" opacity="0.6"/><circle cx="213" cy="129" r="21" fill="#6b7d3a" opacity="0.3"/><circle cx="310" cy="190" r="28" fill="#6b7d3a" opacity="0.4"/><circle cx="407" cy="251" r="13" fill="#6b7d3a" opacity="0.5"/>
+  <path d="M400 190 C 450 230, 450 290, 400 340 C 350 290, 350 230, 400 190 Z" fill="#6b7d3a" opacity="0.9"/>
+  <path d="M400 200 L400 335" stroke="#fffaf1" stroke-width="4" opacity="0.7"/>
+</svg>
