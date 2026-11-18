@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+/* Platera design system — warm "food magazine" theme */
+:root {
+  --bg: #fbf5ea;
+  --bg-alt: #f4ead8;
+  --surface: #fffdf8;
+  --text: #2b2118;
+  --muted: #6a5b4b;
+  --border: #e6d9c3;
+  --primary: #b4472c; /* terracotta */
+  --primary-hover: #983a22;
+  --on-primary: #ffffff;
+  --accent: #5c6e2e; /* olive */
+  --accent-soft: #e9eed6;
+  --primary-soft: #f7e1d8;
+  --star: #d98e04;
+  --danger: #a3261b;
+  --shadow: 0 1px 2px rgba(43, 33, 24, 0.06), 0 6px 18px rgba(43, 33, 24, 0.07);
+  --shadow-hover: 0 2px 4px rgba(43, 33, 24, 0.08), 0 14px 30px rgba(43, 33, 24, 0.14);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #1b1612;
+  --bg-alt: #231d17;
+  --surface: #28211a;
+  --text: #f4ecde;
+  --muted: #b9ab98;
+  --border: #3c3228;
+  --primary: #ec8a6f;
+  --primary-hover: #f5a28b;
+  --on-primary: #2a130b;
+  --accent: #b2c566;
+  --accent-soft: #2f3520;
+  --primary-soft: #3b2219;
+  --star: #f0b429;
+  --danger: #ff8a7d;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.5), 0 14px 30px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1em; }
+a { color: var(--primary); text-underline-offset: 3px; }
+a:hover { color: var(--primary-hover); }
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.container { width: min(1180px, 100% - 2rem); margin-inline: auto; }
+.narrow { width: min(760px, 100% - 2rem); margin-inline: auto; }
+.page { padding: 2rem 0 4rem; }
+.muted { color: var(--muted); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.65rem 1.2rem; border-radius: 999px; border: 1px solid transparent;
+  background: var(--primary); color: var(--on-primary); font: inherit; font-weight: 600;
+  cursor: pointer; text-decoration: none; transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { background: var(--primary-hover); color: var(--on-primary); transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+.btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-ghost:hover { background: var(--bg-alt); color: var(--text); }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-danger:hover { background: var(--danger); color: #fff; filter: brightness(0.92); }
+.btn-sm { padding: 0.35rem 0.8rem; font-size: 0.875rem; }
+
+/* Forms */
+.field { display: grid; gap: 0.35rem; margin-bottom: 1rem; }
+.field label, .label { font-weight: 600; font-size: 0.9rem; }
+input, select, textarea {
+  width: 100%; padding: 0.65rem 0.85rem; font: inherit; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+textarea { min-height: 110px; resize: vertical; }
+.error-text { color: var(--danger); font-size: 0.9rem; margin: 0.25rem 0 0.75rem; }
+
+/* Cards & chips */
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-pad { padding: 1.25rem 1.5rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.7rem; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent); font-size: 0.8rem; font-weight: 600; text-decoration: none;
+}
+.chip-terra { background: var(--primary-soft); color: var(--primary); }
+.grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+
+/* Table (admin) */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

@@ -17,3 +17,6 @@
 - D16: Admins may edit/delete any recipe ("full privileges"); regular users only their own.
 - D17: Admin API (dashboard, users, featured, comment moderation, lookups) shipped with M5 so the M7 admin UI has endpoints. Deactivating a user revokes refresh tokens and blocks login; an already-issued 15-minute access token stays valid until expiry (accepted trade-off, short lifetime).
 - D18: Hidden comments are visible only to admins; users can delete their own comments, admins any.
+- D19: Frontend is Angular 22 (standalone, signals, OnPush, lazy routes) with a custom SCSS design system (no Material): terracotta/olive on cream, Fraunces serif headings, dark mode via data-theme + CSS variables, WCAG-AA-checked primary colours.
+- D20: Dev server proxies /api, /seed and /uploads to the API (web/proxy.conf.json, port 5283) so the SPA uses same-origin relative URLs; production should do the same behind a reverse proxy.
+- D21: Tokens are kept in localStorage (access + refresh) with single-flight refresh in the HTTP interceptor. Trade-off vs httpOnly cookies noted; acceptable for this app's scope.
