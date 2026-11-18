@@ -1,0 +1,6 @@
+@Platera.Api_HostAddress = http://localhost:5283
+
+GET {{Platera.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

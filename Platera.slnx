@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Platera.Api/Platera.Api.csproj" />
+    <Project Path="src/Platera.Application/Platera.Application.csproj" />
+    <Project Path="src/Platera.Domain/Platera.Domain.csproj" />
+    <Project Path="src/Platera.Infrastructure/Platera.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Platera.Tests/Platera.Tests.csproj" />
+  </Folder>
+</Solution>
