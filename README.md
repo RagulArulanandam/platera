@@ -4,10 +4,19 @@
 
 Angular + ASP.NET Core + EF Core + SQL Server, built with Clean Architecture.
 
-<!-- Screenshots: replace the placeholders below with real images in docs/screenshots/ -->
-| Home | Recipe | Admin |
-|------|--------|-------|
-| _screenshot placeholder_ | _screenshot placeholder_ | _screenshot placeholder_ |
+## Screenshots
+
+| Home | Browse (top rated) |
+|------|--------------------|
+| ![Home page with hero and featured recipes](docs/screenshots/home.png) | ![Browse page with search, filters and recipe cards](docs/screenshots/browse.png) |
+
+| Recipe detail | Admin dashboard |
+|---------------|-----------------|
+| ![Recipe detail with ingredients, method, likes, ratings and comments](docs/screenshots/recipe.png) | ![Admin dashboard with counts and latest activity](docs/screenshots/admin.png) |
+
+| Share a recipe | Dark mode | Mobile |
+|----------------|-----------|--------|
+| ![Create recipe form](docs/screenshots/create-recipe.png) | ![Home page in dark mode](docs/screenshots/home-dark.png) | <img src="docs/screenshots/home-mobile.png" alt="Home page on a phone" width="220"> |
 
 ## Features
 - **Users:** register / log in (JWT access + rotating refresh tokens), full CRUD on **their own** recipes (ingredients, ordered steps, 1–5 images, tags), likes, 1–5 star ratings (one per user, average shown), "I tried this" comments with an optional photo, profile with *my recipes* and *liked recipes*.
